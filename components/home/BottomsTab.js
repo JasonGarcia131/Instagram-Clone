@@ -9,25 +9,30 @@ const BottomTabs = () => {
 
     return (
         <View style={styles.wrapper}>
-            <Divider width={1} orientation='vertical'/>
-             <View style={styles.container}>
-            <FontAwesome name="home-solid" color='white'  onPress={()=>setIsActive('home')}/>
-            <FontAwesome name="search" color='white'   onPress={()=>setIsActive('search')}/>
-            <FontAwesome name="home" color='white' onPress={()=>setIsActive('shopping')}/>
-            {/* <FontAwesome name="shopping" color="white"/> */}
+            <Divider width={1} orientation='vertical' />
+            <View style={styles.container}>
+                <FontAwesome size={isActive === 'home' ? 35 : 15} name='home' color='white' onPress={() => setIsActive('home')} />
+                <FontAwesome size={isActive === 'search' ? 35 : 15} name="search" color='white' onPress={() => setIsActive('search')} />
+                <FontAwesome size={isActive === 'add' ? 35 : 15} name="plus-square-o" color={'white'}  onPress={() => setIsActive('add')}/>
+                <FontAwesome size={isActive === 'video' ? 35 : 15} name="film" color='white' onPress={() => setIsActive('video')} />
+                
+            </View>
         </View>
-        </View>
-       
     )
 }
 
 const styles = StyleSheet.create({
-    wrapper: {},
+    wrapper: {
+      
+    },
     container: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         paddingTop: 10
-    }
+    },
+    bold: {
+        fontWeight: '600'
+    },
 })
 
 

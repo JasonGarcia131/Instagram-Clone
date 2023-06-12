@@ -11,10 +11,6 @@ const Header = () => {
 
             <View style={styles.iconsContainer}>
                 <TouchableOpacity>
-                    <Text style={styles.icon}>Add</Text>
-                    <FontAwesome style={styles.icon} name="plus-square-o" color={'white'} size={18}/>
-                </TouchableOpacity>
-                <TouchableOpacity>
                     <Text style={styles.icon}>Heart</Text>
                     <FontAwesome style={styles.icon} name="heart" color={'white'} size={18}/>
                 </TouchableOpacity> 
