@@ -95,7 +95,7 @@ const Comments = ({ post }) => {
         <>
             {
                 post.comments.map((comment, index) => (
-                    <View index={index} style={{flexDirection: 'row', marginTop: 5}}>
+                    <View key={index} style={{flexDirection: 'row', marginTop: 5}}>
                         <Text style={{ color: 'white' }}>
                             <Text style={{ fontWeight: '600' }}>{comment.user}</Text>{' '}
                             {comment.comment}
