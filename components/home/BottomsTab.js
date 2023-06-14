@@ -1,5 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome'
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { Divider } from 'react-native-elements';
 
@@ -15,7 +15,9 @@ const BottomTabs = () => {
                 <FontAwesome size={isActive === 'search' ? 35 : 15} name="search" color='white' onPress={() => setIsActive('search')} />
                 <FontAwesome size={isActive === 'add' ? 35 : 15} name="plus-square-o" color={'white'}  onPress={() => setIsActive('add')}/>
                 <FontAwesome size={isActive === 'video' ? 35 : 15} name="film" color='white' onPress={() => setIsActive('video')} />
-                
+                <TouchableOpacity>
+                    
+                </TouchableOpacity>
             </View>
         </View>
     )
