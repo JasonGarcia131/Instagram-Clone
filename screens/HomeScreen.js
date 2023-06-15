@@ -5,7 +5,7 @@ import Post from "../components/home/Post"
 import { POSTS } from "../data/Posts"
 import BottomTabs from "../components/home/BottomsTab"
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     return (
         // SafeView makes sure the content stays within viewable screen on any device.
         <SafeAreaView style={styles.container}>
@@ -18,7 +18,7 @@ const HomeScreen = () => {
                     ))
                 }
             </ScrollView>
-            <BottomTabs />
+            <BottomTabs navigation={navigation}/>
         </SafeAreaView>
     )
 }

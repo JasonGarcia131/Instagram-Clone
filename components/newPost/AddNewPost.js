@@ -1,17 +1,25 @@
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import FormikPostUploader from "./FormikPostUploader"
 
-const AddNewPost = () => {
+const AddNewPost = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <View style={styles.headerContainer}>
-                <TouchableOpacity>
+           <Header navigation={navigation}/>
+           <FormikPostUploader/>
+        </View>
+    )
+}
+
+const Header = ({navigation}) => {
+    return (
+         <View style={styles.headerContainer}>
+                <TouchableOpacity onPress={()=> navigation.goBack()}>
                     <FontAwesome name='arrow-left' color={'white'} size={20} />
                 </TouchableOpacity>
                 <Text style={styles.headerText}>New post</Text>
                 <Text></Text>
             </View>
-        </View>
     )
 }
 
