@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, StyleSheet, View, ScrollView } from "react-native"
+import {SafeAreaView, StyleSheet, ScrollView } from "react-native"
 import Header from "../components/home/Header"
 import Stories from "../components/home/Stories"
 import Post from "../components/home/Post"

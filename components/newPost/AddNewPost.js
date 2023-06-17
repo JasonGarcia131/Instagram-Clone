@@ -6,7 +6,7 @@ const AddNewPost = ({navigation}) => {
     return (
         <View style={styles.container}>
            <Header navigation={navigation}/>
-           <FormikPostUploader/>
+           <FormikPostUploader navigation={navigation}/>
         </View>
     )
 }
@@ -14,10 +14,10 @@ const AddNewPost = ({navigation}) => {
 const Header = ({navigation}) => {
     return (
          <View style={styles.headerContainer}>
-                <TouchableOpacity onPress={()=> navigation.goBack()}>
+                <TouchableOpacity  onPress={()=>navigation.goBack()}>
                     <FontAwesome name='arrow-left' color={'white'} size={20} />
                 </TouchableOpacity>
-                <Text style={styles.headerText}>New post</Text>
+                <Text style={styles.headerText} >New post</Text>
                 <Text></Text>
             </View>
     )

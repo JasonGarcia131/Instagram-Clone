@@ -13,8 +13,8 @@ const BottomTabs = ({navigation}) => {
             <View style={styles.container}>
                 <FontAwesome size={isActive === 'home' ? 35 : 15} name='home' color='white' onPress={() => setIsActive('home')} />
                 <FontAwesome size={isActive === 'search' ? 35 : 15} name="search" color='white' onPress={() => setIsActive('search')} />
-                <TouchableOpacity onPress={()=> navigation.push('NewPostScreen')}>
-                    <FontAwesome size={isActive === 'add' ? 35 : 15} name="plus-square-o" color={'white'} onPress={() => setIsActive('add')} />
+                <TouchableOpacity>
+                    <FontAwesome size={isActive === 'add' ? 35 : 15} name="plus-square-o" color={'white'} onPress={()=> navigation.push('NewPostScreen')}/>
                 </TouchableOpacity>
                 <FontAwesome size={isActive === 'video' ? 35 : 15} name="film" color='white' onPress={() => setIsActive('video')} />
 
