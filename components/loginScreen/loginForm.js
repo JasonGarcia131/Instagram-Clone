@@ -3,6 +3,8 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 import { Formik } from "formik"
 import { useState } from "react"
 import * as Yup from "yup"
+import firebase from "../../firebase"
+import { Alert } from "react-native"
 
 const LoginForm = ({navigation}) => {
     const loginFormSchema = Yup.object().shape({
@@ -12,12 +14,21 @@ const LoginForm = ({navigation}) => {
             .min(8, 'Your password must be at least 8 characters')
     })
 
+    const onLogin = async (email, password) => {
+        try{
+            await firebase.auth().signInWithEmailAndPassword(email, password)
+            console.log("login successful", email, password)
+        }catch(e){
+            Alert.alert(e.message)
+        }
+    }
+
     return (
         <View>
             <Formik
                 initialValues={{ email: '', password: '' }}
                 onSubmit={(values) => {
-                    console.log(values)
+                    onLogin(values.email, values.password)
                 }}
                 validationSchema={loginFormSchema}
                 validateOnMount={true}
@@ -58,9 +69,7 @@ const LoginForm = ({navigation}) => {
                                     value={values.password}
                                 />
                             </View>
-
                         </View>
-
                         <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
                             <Text>Forgot Password</Text>
                         </View>
